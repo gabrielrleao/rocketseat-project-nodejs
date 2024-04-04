@@ -1,0 +1,27 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+    "title": "Novo evento 2",
+    "details": "Null",
+    "maximumAttendees": 1
+}
+
+
+###
+
+POST http://localhost:3333/events/c85d9502-cbe3-4e4f-bc20-f2d1fa53b81c/attendees
+Content-Type: application/json
+
+{
+    "name": "Gabriel Rodrigues Leão",
+    "email": "gabrielrleao@hotmail.com"
+}
+
+###
+
+GET http://localhost:3333/events/c85d9502-cbe3-4e4f-bc20-f2d1fa53b81c
+
+###
+
+GET http://localhost:3333/attendees/4/badge
