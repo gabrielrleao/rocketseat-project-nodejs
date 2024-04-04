@@ -33,12 +33,12 @@ export async function creatEvent(app: FastifyInstance) {
     })
 
     if (eventWhithSameSlug !== null) {
-        throw new Error('Another event with same tittle already exists')
+        throw new Error('Another event with same title already exists')
     }
 
     const event = await prisma.event.create({
         data: {
-            tittle: data.title,
+            title: data.title,
             details: data.details,
             maximumAttendees: data.maximumAttendees,
             slug,   

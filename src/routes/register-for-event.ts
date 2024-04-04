@@ -29,7 +29,7 @@ export async function registerForEvent(app: FastifyInstance) {
               where: {
                 eventId_email: {
                     email,
-                    eventId
+                    eventId,
                 }
               }                                                           
             })

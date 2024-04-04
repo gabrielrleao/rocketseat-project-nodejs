@@ -15,7 +15,7 @@ export async function getEvent(app: FastifyInstance) {
           200: {
             event: z.object ({
               id: z.string().uuid(),
-              tittle: z.string(),
+              title: z.string(),
               slug: z.string(),
               details: z.string().nullable(),
               maximunAttendees: z.number().int().nullable(),
@@ -30,7 +30,7 @@ export async function getEvent(app: FastifyInstance) {
       const event = await prisma.event.findUnique({
         select: {
           id: true,
-          tittle: true,
+          title: true,
           slug: true,
           details: true,
           maximumAttendees: true,
@@ -52,7 +52,7 @@ export async function getEvent(app: FastifyInstance) {
       return reply.send ({
          event: {
           id: event.id,
-          tittle: event.tittle,
+          title: event.title,
           slug: event.slug,
           details: event.details,
           maximumAttendees: event.maximumAttendees,
